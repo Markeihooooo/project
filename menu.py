@@ -22,6 +22,6 @@ def set_price(new_price):
     global price
     price = new_price
 
-
+11232
 def price_use():
     return price
