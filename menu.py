@@ -1,3 +1,14 @@
+price = 0 
+
+def set_price(new_price):
+    global price
+    price = new_price
+
+
+def price_use():
+    return price
+
+## Menu
 def menu():
     print("        ┌=======================================┐")
     print("        ╎          |ร้าน ตั้งหวังเกือบเจ้ง|           ╎")
@@ -16,12 +27,17 @@ def menu():
     print("| 11.ชานมเเอปเปิ้ล       (Appln Milk Tea)         ----- 19 ฿ |\n")
     print("============================================================")
 
-price = 0 
+def topping_showall():
+    print("\n1.วุ้นอโล      ---- +5 ฿")
+    print("2.สโนว์มุก     ---- +5 ฿")
+    print("3.ไข่มุกโนบิ    ---- +5 ฿")
+    print("4.เยลลี่ ผลไม้  ---- +5 ฿")
+    print("5.บุกราวน์ชูการ์ ---- +5 ฿\n")
 
-def set_price(new_price):
-    global price
-    price = new_price
+def topping_not1():
+    print(f"\n{gray_code}1.วุ้นอโล      ---- +5 ฿{reset_code}")
+    print("2.สโนว์มุก     ---- +5 ฿")
+    print("3.ไข่มุกโนบิ    ---- +5 ฿")
+    print("4.เยลลี่ ผลไม้  ---- +5 ฿")
+    print("5.บุกราวน์ชูการ์ ---- +5 ฿\n")
 
-
-def price_use():
-    return price

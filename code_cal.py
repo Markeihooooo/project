@@ -1,29 +1,17 @@
 gray_code = "\033[1;30m" # กำหนดสี 
+reset_code = "\033[0m"
 ##################################
 """import profile
 price = profile.price"""
 import menu
-
 current_price = menu.price_use()
 
 print(current_price)
 
 topping_item = " "
-def menu_showall():
-    print("\n1.วุ้นอโล      ---- +5 ฿")
-    print("2.สโนว์มุก     ---- +5 ฿")
-    print("3.ไข่มุกโนบิ    ---- +5 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +5 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +5 ฿\n")
+topping_showall = menu.topping_showall()
 
-def menu_not1():
-    print(f"\n{gray_code}1.วุ้นอโล      ---- +5 ฿")
-    print("2.สโนว์มุก     ---- +5 ฿")
-    print("3.ไข่มุกโนบิ    ---- +5 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +5 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +5 ฿\n")
 
-menu_showall()
 topping_list = ["วุ้นอโล", "สโนว์มุก", "ไข่มุกโนบิ", "เยลลี่ ผลไม้", "บุกราวน์ชูการ์"]
 topping_choice = int(input("คุณต้องการอะไรบ้าง: "))
 
