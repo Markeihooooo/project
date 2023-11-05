@@ -6,6 +6,8 @@ import menu
 
 current_price = menu.price_use()
 
+print(current_price)
+
 topping_item = " "
 def menu_showall():
     print("\n1.วุ้นอโล      ---- +5 ฿")

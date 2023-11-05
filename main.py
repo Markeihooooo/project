@@ -1,4 +1,4 @@
-#import menu
+import menu
 while True:
     menu_data = menu.menu()
     menu_number = input("\nเลือกเมนูที่คุณต้องการ : ")
@@ -18,6 +18,6 @@ while True:
     except ValueError:
         print("***กรุณาใส่เลือกรายการเฉพาะตัวเลข***")
 
-#topping_yn = input("คุณต้องการเพิ่ม ท๊อปปิ้ง ไหม \nY.ต้องการเพิ่ม\nN.ไม่ต้องการ\n\nY/N : ")
-#if topping_yn == ("Y") or topping_yn == ("y"):
-#   import topping
+topping_yn = input("คุณต้องการเพิ่ม ท๊อปปิ้ง ไหม \nY.ต้องการเพิ่ม\nN.ไม่ต้องการ\n\nY/N : ")
+if topping_yn == ("Y") or topping_yn == ("y"):
+    import code_cal
