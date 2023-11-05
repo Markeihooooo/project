@@ -8,11 +8,12 @@ topping_item = " "
 
 while True:
     topping_showall = menu.topping_showall()
-    topping_want = input("คุณต้องการใส่ท็อปปิ้งกี่อย่าง")
-    try: 
+    topping_want = int(input("คุณต้องการใส่ท็อปปิ้งกี่อย่าง"))
+    try:
         if topping_want == 1 :
             topping_number1 = int(input("Number"))
         elif topping_want == 2 :
+            topping_number1 = int(input("Number"))
             topping_number2 = int(input("Number"))
         elif topping_want == 3 :
             topping_number3 = int(input("Number"))
@@ -35,6 +36,7 @@ while True:
         #     topping_number = int(input("Number"))
         #     topping_number2 = int(input("Number"))
     except ValueError:
+        print("***กรุณาใส่เลือกรายการเฉพาะตัวเลข***")
 
 
 

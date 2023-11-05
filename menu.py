@@ -1,5 +1,4 @@
-gray_code = "\033[1;30m" # กำหนดสี 
-reset_code = "\033[0m"
+
 ##################################
 price = 0 
 
@@ -51,12 +50,9 @@ def size_cup():
 
 
 
-g = int(input("Number"))
-i = int(input("Number"))
 
-selected_items = [g, i]
 
-def topping_showall(selected_items):
+def topping_check(selected_items):
     print(selected_items)
     for i in range(1, 11):
         if i in selected_items:
@@ -88,4 +84,4 @@ def topping_showall(selected_items):
     print("\033[0;37;40m", end='')  # คืนสีปกติ
 
 
-topping_showall(selected_items)
+
