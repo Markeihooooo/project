@@ -14,26 +14,28 @@ while True:
             topping_item = topping_item+ topping_list[topping_choice-1]
             print("ตอนนี้คุณเลือก : \n==========",topping_item)
             menu.topping_not1()
-            checktopping_up = input("คุณต้องการเลือกท๊อปปิ้งอีก หรือไม่ Y/n : ")
-            if checktopping_up == "Y" or checktopping_up == "y":
-                while True :
-                    try:
-                        menu.topping_not1()
-                        topping_choice1 = int(input("คุณต้องการใส่อะไรอีก 1 อย่าง : "))
-                        if topping_choice1 == 1 :
-                            print("คุณเลือกรายการซ้ำ กรุณาเลือกใหม่ : ")
-                        elif topping_choice1 == 2 :
-                            topping_item = topping_item +","+ topping_list[topping_choice-2]
-                            print("ตอนนี้คุณเลือก : ",topping_item)
-                            menu.topping_not12()
-                            break
-                    except ValueError:
-                            print("***กรุณาใส่เลือกรายการเฉพาะตัวเลข***")
-                            pass
-            elif checktopping_up == "N" or checktopping_up == "n":
-                pass   
-    except ValueError:
-        pass
+          
+
+
+
+
+
+    #                     menu.topping_not1()
+    #                     topping_choice1 = int(input("คุณต้องการใส่อะไรอีก 1 อย่าง : "))
+    #                     if topping_choice1 == 1 :
+    #                         print("คุณเลือกรายการซ้ำ กรุณาเลือกใหม่ : ")
+    #                     elif topping_choice1 == 2 :
+    #                         topping_item = topping_item +","+ topping_list[topping_choice-2]
+    #                         print("ตอนนี้คุณเลือก : ",topping_item)
+    #                         menu.topping_not12()
+    #                         break
+    #                 except ValueError:
+    #                         print("***กรุณาใส่เลือกรายการเฉพาะตัวเลข***")
+    #                         pass
+    #         elif checktopping_up == "N" or checktopping_up == "n":
+    #             pass   
+    # except ValueError:
+    #     pass
 
 
 

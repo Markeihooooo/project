@@ -37,110 +37,6 @@ def topping_showall():
     print("4.เยลลี่ ผลไม้  ---- +10 ฿")
     print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
 
-def topping_not1():
-    print(f"\n{gray_code}1.วุ้นอโล ----      +10 ฿{reset_code}")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not2():
-    print("\n1.วุ้นอโล     ---- +10 ฿")
-    print(f"{gray_code}2.สโนว์มุก ---- +10 ฿{reset_code}")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not3():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print(f"{gray_code}3.ไข่มุกโนบิ    ---- +10 ฿{reset_code}")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +10฿\n")
-
-def topping_not4():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print(f"{gray_code}4.เยลลี่ ผลไม้  ---- +10 ฿{reset_code}")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not5():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print(f"{gray_code}5.บุกราวน์ชูการ์ ---- +10 ฿{reset_code}")
-
-def topping_not12():
-    print(f"\n{gray_code}1.วุ้นอโล ----      +10 ฿{reset_code}")
-    print(f"{gray_code}2.สโนว์มุก     ---- +10 ฿{reset_code}")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not13():
-    print(f"\n{gray_code}1.วุ้นอโล ----      +10 ฿{reset_code}")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print(f"{gray_code}3.ไข่มุกโนบิ    ---- +10 ฿{reset_code}")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not14():
-    print(f"\n{gray_code}1.วุ้นอโล ----      +10 ฿{reset_code}")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print(f"{gray_code}4.เยลลี่ ผลไม้  ---- +10 ฿{reset_code}")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not15():
-    print(f"\n{gray_code}1.วุ้นอโล ----      +10 ฿{reset_code}")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print(f"{gray_code}5.บุกราวน์ชูการ์ ---- +10 ฿{reset_code}\n")
-
-def topping_not23():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print(f"{gray_code}2.สโนว์มุก     ---- +10 ฿{reset_code}")
-    print(f"{gray_code}3.ไข่มุกโนบิ    ---- +10 ฿{reset_code}")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not24():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print(f"{gray_code}2.สโนว์มุก     ---- +10 ฿{reset_code}")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print(f"{gray_code}4.เยลลี่ ผลไม้  ---- +10 ฿{reset_code}")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not25():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print(f"{gray_code}2.สโนว์มุก     ---- +10 ฿{reset_code}")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print(f"{gray_code}5.บุกราวน์ชูการ์ ---- +10 ฿{reset_code}\n")
-
-def topping_not34():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print(f"{gray_code}3.ไข่มุกโนบิ    ---- +10฿{reset_code}")
-    print(f"{gray_code}4.เยลลี่ ผลไม้  ---- +10 ฿{reset_code}")
-    print("5.บุกราวน์ชูการ์ ---- +10 ฿\n")
-
-def topping_not35():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print(f"{gray_code}3.ไข่มุกโนบิ    ---- +10 ฿{reset_code}")
-    print("4.เยลลี่ ผลไม้  ---- +10 ฿")
-    print(f"{gray_code}5.บุกราวน์ชูการ์ ---- +10 ฿{reset_code}\n")
-
-def topping_not45():
-    print("\n1.วุ้นอโล      ---- +10 ฿")
-    print("2.สโนว์มุก     ---- +10 ฿")
-    print("3.ไข่มุกโนบิ    ---- +10 ฿")
-    print(f"{gray_code}4.เยลลี่ ผลไม้  ---- +10 ฿{reset_code}")
-    print(f"{gray_code}5.บุกราวน์ชูการ์ ---- +10 ฿{reset_code}\n")
 
 def size_cup():
     print("\n======== Glass =========")
@@ -149,3 +45,39 @@ def size_cup():
     print("| 3.L      ----- 10 ฿   |")
     print("| 4.XL     ----- 15 ฿   |")
     print("=========================\n")
+
+
+
+gray_code = "\033[1;30m" # กำหนดสี 
+reset_code = "\033[0m"
+
+
+g = int(input("Number"))
+i = int(input("Number"))
+z = int(input("Number"))
+selected_items = [g, i, z]
+
+def topping_showall(selected_items):
+    print(selected_items)
+    for i in range(1, 6):
+        if i in selected_items:
+            print("\033[1;30m", end='')  # สีเทา
+        else:
+            print("\033[0m", end='')  # สีปกติ
+        
+        if i == 1:
+            print("1.วุ้นอโล      ---- +10 ฿")
+        elif i == 2:
+            print("2.สโนว์มุก     ---- +10 ฿")
+        elif i == 3:
+            print("3.ไข่มุกโนบิ    ---- +10 ฿")
+        elif i == 4:
+            print("4.เยลลี่ ผลไม้  ---- +10 ฿")
+        elif i == 5:
+            print("5.บุกราวน์ชูการ์ ---- +10 ฿")
+    
+    print("\033[0;37;40m", end='')  # คืนสีปกติ
+
+# ตัวอย่างการใช้งาน
+# selected_items = [1, 3]  # เลือกรายการ 1 และ 3
+topping_showall(selected_items)
