@@ -48,25 +48,24 @@ def size_cup():
 
 
 
-gray_code = "\033[1;30m" # กำหนดสี 
-reset_code = "\033[0m"
+
 
 
 g = int(input("Number"))
 i = int(input("Number"))
-z = int(input("Number"))
-selected_items = [g, i, z]
+
+selected_items = [g, i]
 
 def topping_showall(selected_items):
     print(selected_items)
-    for i in range(1, 6):
+    for i in range(1, 11):
         if i in selected_items:
             print("\033[1;30m", end='')  # สีเทา
         else:
             print("\033[0m", end='')  # สีปกติ
         
-        if i == 1:
-            print("1.วุ้นอโล      ---- +10 ฿")
+        if  i == 1:
+            print("1.วุ้นอโล      ---- +15 ฿")
         elif i == 2:
             print("2.สโนว์มุก     ---- +10 ฿")
         elif i == 3:
@@ -74,10 +73,19 @@ def topping_showall(selected_items):
         elif i == 4:
             print("4.เยลลี่ ผลไม้  ---- +10 ฿")
         elif i == 5:
-            print("5.บุกราวน์ชูการ์ ---- +10 ฿")
+            print("5.บุกราวน์ชูการ์  ---- +15 ฿")
+        elif i == 6:
+            print("6.คาราเมล     ---- +10 ฿")
+        elif i == 7:
+            print("7.สตอเบอรี่     ---- +10 ฿")
+        elif i == 8:
+            print("8.ไข่มุกราวน์ชูการ์ ---- +15 ฿")
+        elif i == 9:
+            print("9.บุกคริสตัส      ---- +15 ฿")
+        elif i == 10:
+            print("10.ราสเบอรี่      ---- +10 ฿")
     
     print("\033[0;37;40m", end='')  # คืนสีปกติ
 
-# ตัวอย่างการใช้งาน
-# selected_items = [1, 3]  # เลือกรายการ 1 และ 3
+
 topping_showall(selected_items)

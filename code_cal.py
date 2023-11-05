@@ -8,12 +8,54 @@ topping_item = " "
 
 while True:
     topping_showall = menu.topping_showall()
-    topping_choice = int(input("คุณต้องการอะไรบ้าง: "))
-    try:
-        if topping_choice == 1:
-            topping_item = topping_item+ topping_list[topping_choice-1]
-            print("ตอนนี้คุณเลือก : \n==========",topping_item)
-            menu.topping_not1()
+    topping_want = input("คุณต้องการใส่ท็อปปิ้งกี่อย่าง")
+    try: 
+        if topping_want == 1 :
+            topping_number1 = int(input("Number"))
+        elif topping_want == 2 :
+            topping_number2 = int(input("Number"))
+        elif topping_want == 3 :
+            topping_number3 = int(input("Number"))
+        elif topping_want == 4 :
+            topping_number4 = int(input("Number"))
+        elif topping_want == 5 :
+            topping_number5 = int(input("Number"))
+        elif topping_want == 6 :
+            topping_number6 = int(input("Number"))
+        elif topping_want == 7 :
+            topping_number7 = int(input("Number"))
+        elif topping_want == 8 :
+            topping_number8 = int(input("Number"))
+        elif topping_want == 9 :
+            topping_number9 = int(input("Number"))
+        elif topping_want == 10 :
+            topping_number10 = int(input("Number"))
+
+        # elif topping_want == 2 :
+        #     topping_number = int(input("Number"))
+        #     topping_number2 = int(input("Number"))
+    except ValueError:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # topping_choice = int(input("คุณต้องการใส่อะไรบ้าง: "))
+    # try:
+    #     if topping_choice == 1:
+    #         topping_item = topping_item+ topping_list[topping_choice-1]
+    #         print("ตอนนี้คุณเลือก : \n==========",topping_item)
+    #         menu.topping_not1()
           
 
 
