@@ -7,6 +7,8 @@ topping_item = " "
 topping_numberall = [] #ทำให้ท๊อปปิ้งสีดำ
 result = 0
 
+
+
 def topping_check(selected_items):
      for i in range(1, 11):
          if i in selected_items:
