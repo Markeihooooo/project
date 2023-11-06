@@ -51,8 +51,10 @@ while True:
             
                 if topping_want == 1 :  # ต้องการท๊อปปิ้ง 1 อย่าง
                     topping_number1 = int(input("รายการท๊อปปิ้งที่คุณต้องการ : "))
+                    if topping_number1 > 10 :
+                        continue
                     topping_select = topping_list[topping_number1-1]
-                    print("###################################\nรายการที่คุณเลือก : ",topping_select)
+                    print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
                     topping_numberall.append(topping_number1)
                     topping_check(topping_numberall)
 
@@ -90,8 +92,8 @@ while True:
                 elif topping_want == 2 : # ต้องการท๊อปปิ้ง 2 อย่าง
                     topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
                     topping_select = topping_list[topping_number1-1]
-                    print("###################################\nรายการที่คุณเลือก : ",topping_select)
-                    
+                    print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
+                    topping_numberall.append(topping_number1)
                     topping_check(topping_numberall)
                     # topping_numberall.append(topping_number1)
                     
@@ -100,7 +102,9 @@ while True:
                     # topping_numberall.append(topping_number2)
                     topping_select = topping_select +" "+ topping_list[topping_number2-1]
                     print("###################################\nรายการที่คุณเลือก : ", end='')
-                    print(topping_select)
+                    print(topping_select,"\n")
+                    topping_numberall.append(topping_number2)
+                    topping_check(topping_numberall)
 
                     result = result + topping_price[topping_number1 - 1] + topping_price[topping_number2 - 1]
                     while True:
@@ -138,11 +142,11 @@ while True:
                 elif topping_want == 3 :# ต้องการท๊อปปิ้ง 3 อย่าง
                     topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
                     topping_select = topping_list[topping_number1-1]
-                    print("###################################\nรายการที่คุณเลือก : ",topping_select)
+                    print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
                     # topping_numberall.append(topping_number1)
                     
                     topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
-                    print("รายการที่คุณเลือก : ",topping_list[topping_number2-1])
+                    print("รายการที่คุณเลือก : ",topping_list[topping_number2-1],"\n")
                     topping_select = topping_select +" "+ topping_list[topping_number2-1]
                     # topping_numberall.append(topping_number2)
 
@@ -150,7 +154,7 @@ while True:
                     # topping_numberall.append(topping_number3)                 
                     topping_select = topping_select +" "+ topping_list[topping_number3-1]
                     print("###################################\nรายการที่คุณเลือก : ", end='')
-                    print(topping_select)
+                    print(topping_select,"\n")
                     
                     result = result + topping_price[topping_number1 - 1] + topping_price[topping_number2 - 1] + topping_price[topping_number3 - 1]
                     while True:
