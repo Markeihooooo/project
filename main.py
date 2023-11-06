@@ -1,26 +1,20 @@
 import menu
-topping_list = ["วุ้นอโล", "สโนว์มุก","ไข่มุกโนบิ","เยลลี่ผลไม้", "บุกราวน์ชูการ์ ", "คาราเมล", "สตอเบอรี่", "ไข่มุกราวน์ชูการ์", "บุกคริสตัส", "ราสเบอรี่"]
 
-
-
-def select_menu():
-    while True:
-        menu.menu()
-        menu_number = input("\nเลือกเมนูที่คุณต้องการ : ")
-        print("\n\n###########################################################")
-        if menu_number.isdigit():
-            menu_number=int(menu_number)
-            if 1 <= menu_number <= 11:
-                print("\nเมนูที่คุณเลือก\n  ",menu.menu_list[menu_number-1],menu.price_use()+ menu.menu_price[menu_number-1],"฿")
-                
-                
-                break
-            else:
-                print("***โปรดป้อนตัวเลข 1-11***")
+while True:
+    menu.menu()
+    menu_number = input("\nเลือกเมนูที่คุณต้องการ : ")
+    print("\n\n###########################################################")
+    if menu_number.isdigit():#.isdigit คือ ตรวจสอบว่าstrที่รับมาเป็นตัวเลขไหม
+        menu_number = int(menu_number)
+        if 1 <= menu_number <= 11:
+            print("\nเมนูที่คุณเลือก\n  ",menu.menu_list[menu_number-1],menu.price_use()+ menu.menu_price[menu_number-1],"฿")
+            break
         else:
-            print("***โปรดป้อนเฉพาะ ตัวเลข 1-11***")
-    
-select_menu()
+            print("***โปรดป้อนตัวเลข 1-11***")
+    else:
+        print("***โปรดป้อนเฉพาะ ตัวเลข 1-11***")
+
+
 
 
 # while True:
