@@ -28,9 +28,10 @@ def menu():
     print("| 6.ชานมคาราเมล        (caramel Milk Tea)       ----- 19 ฿ |")
     print("| 7.ชานมน้ำผึ้ง           (Honey Milk Tea)         ----- 19 ฿ |")
     print("| 8.ชาดำเย็น            (Thai Tea)               ----- 19 ฿ |")
-    print("| 9.ชาไทย             (Thai Milk Tea)          ----- 19 ฿ |")
+    print("| 9.ชาไทย              (Thai Milk Tea)          ----- 19 ฿ |")
     print("| 10.ชาเขียว            (green Tea)              ----- 19 ฿ |")
     print("| 11.ชานมเเอปเปิ้ล       (Appln Milk Tea)         ----- 19 ฿ |\n")
+    print("0.ยกเลิกการสั่งซื้อ")
     print("============================================================")
 
 def topping_showall():
