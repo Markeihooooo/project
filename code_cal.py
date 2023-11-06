@@ -143,11 +143,15 @@ while True:
                     topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
                     topping_select = topping_list[topping_number1-1]
                     print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
+                    topping_numberall.append(topping_number1)
+                    topping_check(topping_numberall)
                     # topping_numberall.append(topping_number1)
                     
                     topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
                     print("รายการที่คุณเลือก : ",topping_list[topping_number2-1],"\n")
                     topping_select = topping_select +" "+ topping_list[topping_number2-1]
+                    topping_numberall.append(topping_number2)
+                    topping_check(topping_numberall)
                     # topping_numberall.append(topping_number2)
 
                     topping_number3 = int(input("รายการท๊อปปิ้ง ที่ 3 : "))   
@@ -155,6 +159,8 @@ while True:
                     topping_select = topping_select +" "+ topping_list[topping_number3-1]
                     print("###################################\nรายการที่คุณเลือก : ", end='')
                     print(topping_select,"\n")
+                    topping_numberall.append(topping_number3)
+                    topping_check(topping_numberall)
                     
                     result = result + topping_price[topping_number1 - 1] + topping_price[topping_number2 - 1] + topping_price[topping_number3 - 1]
                     while True:
@@ -185,7 +191,7 @@ while True:
                         else:
                             print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
                     if cheack_topping != "2" : break
-                    break
+                    
 
                 
                 else:
@@ -211,9 +217,9 @@ while True:
     except ValueError:
         print("\n***กรุณาใส่เลือกรายการเฉพาะตัวเลข***")
     
-print("ราคา " , menu.price_use() , " ฿")
 
-menu.size_cup()
+
+
 
 
 
