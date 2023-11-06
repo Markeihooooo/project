@@ -47,7 +47,7 @@ while True:
             if topping_want == 1 :  
                 topping_number1 = int(input("รายการท๊อปปิ้งที่คุณต้องการ : "))
                 topping_select = topping_list[topping_number1-1]
-                print("รายการที่คุณเลือก : ",topping_select)
+                print("###################################\nรายการที่คุณเลือก : ",topping_select)
                 topping_numberall.append(topping_number1)
                 topping_check(topping_numberall)
                 cheack_topping = input("คุณต้องการดำเนินการต่อหรือไม่ \n1.ดำเนินการต่อไป   2.เปลี่ยนท๊อปปิ้ง   3.ยกเลิกท๊อปปิ้ง \n>>>: ")
@@ -65,11 +65,14 @@ while True:
                 
             elif topping_want == 2 :
                 topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
-                print("รายการที่คุณเลือก : ",topping_list[topping_number1-1])
+                topping_select = topping_list[topping_number1-1]
+                print("###################################\nรายการที่คุณเลือก : ",topping_select)
                 topping_numberall.append(topping_number1)
                 topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
+                topping_numberall.append(topping_number2)
+                topping_select = topping_list[topping_number2-1]
+                print("###################################\nรายการที่คุณเลือก : ",topping_numberall)
                 topping_numberall.append(topping_number1)
-                print("รายการที่คุณเลือก : ",topping_list[topping_number2-1])
                 break
             elif topping_want == 3 :
                 topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
