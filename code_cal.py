@@ -49,181 +49,213 @@ while True:
 
             print("\nเมนูที่คุณเลือก\n\n",menu.menu_list[menu_number-1],"ราคา ",menu.price_use()+ menu.menu_price[menu_number-1]," ฿\n")
 
-            check_menu = input("คุณต้องการดำเนินการต่อหรือไม่\nY = ดำเนินการต่อ\nN = แก้ไขรายการเมนู\n0 = ยกเลิก\n(Y/N) : ")#อย่าลืมแก้ พิมตัวเลข
             while True:
-                if check_menu == "Y" or check_menu == "y":
+                check_menu = input("คุณต้องการดำเนินการต่อหรือไม่\nY = ดำเนินการต่อ\nN = แก้ไขรายการเมนู\n0 = ยกเลิก\n(Y/N) : ")#
+                if check_menu == "Y" or check_menu == "y" or check_menu == "1":
                     while True:###################################################
-                        print("\n***************** TOPPING *****************\nท๊อปปิ้งของเรามีดังนี้ \n\n",topping_list,"\n")
-                        topping_yn = input("คุณต้องการเพิ่ม ท๊อปปิ้ง ไหม \nY.ต้องการเพิ่ม\nN.ไม่ต้องการ\nY/N >>>: ")
-                        if topping_yn == ("Y") or topping_yn == ("y"):
-                            topping_want = input("\nคุณต้องการใส่ท็อปปิ้งกี่อย่าง สูงสุดใส่ได้ 3 อย่าง\n0 = ยกเลิกท๊อปปิ้ง \nต้องการใส่กี่อย่าง >>>: ")
-                            while True:
-                                if topping_want == "0" or 0 :break
-                                
-                                if topping_want.isdigit():
+                                print("\n***************** TOPPING *****************\nท๊อปปิ้งของเรามีดังนี้ \n\n",topping_list,"\n")
+                                topping_yn = input("คุณต้องการเพิ่ม ท๊อปปิ้ง ไหม \nY.ต้องการเพิ่ม\nN.ไม่ต้องการ\nY/N >>>: ")
+                                if topping_yn == ("Y") or topping_yn == ("y"):
 
-                                    topping_want = int(topping_want)
+                                    while True:
+                                        topping_want = input("\nคุณต้องการใส่ท็อปปิ้งกี่อย่าง สูงสุดใส่ได้ 3 อย่าง\n0 = ยกเลิกท๊อปปิ้ง \nต้องการใส่กี่อย่าง >>>: ")
 
-                                    if topping_want <=3 :
-                                        topping_showall = menu.topping_showall()
-                                        if topping_want == 1 :# Topping 1 อย่าง
-                                            topping_number1 = int(input("รายการท๊อปปิ้งที่คุณต้องการ : "))
-                                            if topping_number1 > 10 :
-                                                continue
-                                            topping_select = topping_list[topping_number1-1]
-                                            print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
-                                            topping_numberall.append(topping_number1)
-                                            topping_check(topping_numberall)
+                                        if topping_want.isdigit():
                                             while True:
-                                                cheack_topping = input("คุณต้องการดำเนินการต่อหรือไม่ \n1.ดำเนินการต่อไป   2.เปลี่ยนท็อปปิง   9.เลือกจำนวนท็อปปิงใหม่   0.ยกเลิกท็อปปิง(ดำเนินการต่อไป) \n>>>: ")
-                                                if cheack_topping == "1":
-                                                    menu.set_price(menu.price_use() + topping_price[topping_number1 - 1])
-                                                    break
-                                                elif cheack_topping == "2":
-                                                    topping_select = ""
-                                                    topping_numberall = []
+                                                topping_want = int(topping_want)
+                                                if 1 <= topping_want <= 3:
+                                                        if topping_want == "0" or 0 :break
+                                                        if topping_want <=3 :
+                                                            topping_showall = menu.topping_showall()
+                                                            if topping_want == 1 :  # ต้องการท๊อปปิ้ง 1 อย่าง
+                                                                
+                                                                topping_number1 = int(input("รายการท๊อปปิ้งที่คุณต้องการ : "))
+                                                                if topping_number1 > 10 :
+                                                                    continue
+                                                                elif topping_want == " ":
+                                                                    print("คุณยังไม่ได้กรอกข้อมูล")
+                                                                topping_select = topping_list[topping_number1-1]
+                                                                print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
+                                                                topping_numberall.append(topping_number1)
+                                                                topping_check(topping_numberall)
+
+                                                                
+                                                                while True:#check topping
+                                                                    cheack_topping = input("คุณต้องการดำเนินการต่อหรือไม่ \n1.ดำเนินการต่อไป   2.เปลี่ยนท็อปปิง   9.เลือกจำนวนท็อปปิงใหม่   0.ยกเลิกท็อปปิง(ดำเนินการต่อไป) \n>>>: ")
+                                                                    
+                                                                    if cheack_topping == "1":
+                                                                        menu.set_price(menu.price_use() + topping_price[topping_number1 - 1])
+                                                                        break
+                                                                    elif cheack_topping == "2":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        result = 0
+                                                                        break
+                                                                    
+                                                                    elif cheack_topping == "0":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        result = 0
+                                                                        break
+                                                                    elif cheack_topping == "9":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        topping_want = " "
+                                                                        result = 0
+                                                                        print(topping_list)
+                                                                        break
+
+
+                                                                    else:
+                                                                        print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
+                                                                if cheack_topping != "2" : break
+                                                            elif topping_want == 2 : # ต้องการท๊อปปิ้ง 2 อย่าง
+                                                                topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
+                                                                topping_select = topping_list[topping_number1-1]
+                                                                print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
+                                                                topping_numberall.append(topping_number1)
+                                                                topping_check(topping_numberall)
+                                                                # topping_numberall.append(topping_number1)
+                                                                
+
+                                                                topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
+                                                                # topping_numberall.append(topping_number2)
+                                                                topping_select = topping_select +" "+ topping_list[topping_number2-1]
+                                                                print("###################################\nรายการที่คุณเลือก : ", end='')
+                                                                print(topping_select,"\n")
+                                                                topping_numberall.append(topping_number2)
+                                                                topping_check(topping_numberall)
+
+                                                                result = result + topping_price[topping_number1 - 1] + topping_price[topping_number2 - 1]
+                                                                while True:
+                                                                    cheack_topping = input("คุณต้องการดำเนินการต่อหรือไม่ \n1.ดำเนินการต่อไป   2.เปลี่ยนท็อปปิง   9.เลือกจำนวนท็อปปิงใหม่   0.ยกเลิกท็อปปิง(ดำเนินการต่อไป) \n>>>: ")
+                                                                    
+                                                                    if cheack_topping == "1":
+                                                                        menu.set_price(menu.price_use() + result)
+                                                                        break
+                                                                    elif cheack_topping == "2":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        result = 0
+                                                                        break
+                                                                    
+                                                                    elif cheack_topping == "0":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        result = 0
+                                                                        break
+
+                                                                    elif cheack_topping == "9":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        topping_want = " "
+                                                                        result = 0
+                                                                        print(topping_list)
+                                                                        break
+                                                                    else:
+                                                                        print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
+                                                                if cheack_topping != "2" : break
+                                                            elif topping_want == 3 :# ต้องการท๊อปปิ้ง 3 อย่าง
+                                                                topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
+                                                                topping_select = topping_list[topping_number1-1]
+                                                                print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
+                                                                topping_numberall.append(topping_number1)
+                                                                topping_check(topping_numberall)
+                                                                # topping_numberall.append(topping_number1)
+                                                                
+                                                                topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
+                                                                print("รายการที่คุณเลือก : ",topping_list[topping_number2-1],"\n")
+                                                                topping_select = topping_select +" "+ topping_list[topping_number2-1]
+                                                                topping_numberall.append(topping_number2)
+                                                                topping_check(topping_numberall)
+                                                                # topping_numberall.append(topping_number2)
+
+                                                                topping_number3 = int(input("รายการท๊อปปิ้ง ที่ 3 : "))   
+                                                                # topping_numberall.append(topping_number3)                 
+                                                                topping_select = topping_select +" "+ topping_list[topping_number3-1]
+                                                                print("###################################\nรายการที่คุณเลือก : ", end='')
+                                                                print(topping_select,"\n")
+                                                                topping_numberall.append(topping_number3)
+                                                                topping_check(topping_numberall)
+                                                                
+                                                                result = result + topping_price[topping_number1 - 1] + topping_price[topping_number2 - 1] + topping_price[topping_number3 - 1]
+                                                                while True:
+                                                                    cheack_topping = input("คุณต้องการดำเนินการต่อหรือไม่ \n1.ดำเนินการต่อไป   2.เปลี่ยนท็อปปิง   9.เลือกจำนวนท็อปปิงใหม่   0.ยกเลิกท็อปปิง(ดำเนินการต่อไป) \n>>>: ")
+                                                                    
+                                                                    if cheack_topping == "1":
+                                                                        menu.set_price(menu.price_use() + result)
+                                                                        break
+                                                                    elif cheack_topping == "2":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        result = 0
+                                                                        break
+                                                                    
+                                                                    elif cheack_topping == "0":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        result = 0
+                                                                        break
+
+                                                                    elif cheack_topping == "9":
+                                                                        topping_select = ""
+                                                                        topping_numberall = []
+                                                                        topping_want = " "
+                                                                        result = 0
+                                                                        print(topping_list)
+                                                                        break
+                                                                    else:
+                                                                        print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
+                                                                if cheack_topping != "2" : break
+
+                                                            else:
+                                                                topping_want = []
+                                                                continue
+
+                                                        elif cheack_topping == "9" or cheack_topping == 9:
+                                                            topping_select = " "
+                                                            topping_numberall = []
+                                                            topping_want = " "
+                                                            break
+                                                            
+                                                elif topping_want > 3 :
                                                     topping_want = " "
-                                                    result = 0
+                                                    print("\n***ใส่สูงสุดได้แค่ 3 รายการ***")
                                                     break
-                                                elif cheack_topping == "0":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    result = 0
-                                                    break
-                                                elif cheack_topping == "9":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    topping_want = " "
-                                                    result = 0
-                                                    print(topping_list)
-                                                    break
-                                                else:
-                                                        print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
-                                                if cheack_topping != "2" : break                                            
-                                        
-                                        elif topping_want == 2 : # ต้องการท๊อปปิ้ง 2 อย่าง
-                                            topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
-                                            topping_select = topping_list[topping_number1-1]
-                                            print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
-                                            topping_numberall.append(topping_number1)
-                                            topping_check(topping_numberall)
-                                            topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
-                                            topping_select = topping_select +" "+ topping_list[topping_number2-1]
-                                            print("###################################\nรายการที่คุณเลือก : ", end='')
-                                            print(topping_select,"\n")
-                                            topping_numberall.append(topping_number2)
-                                            topping_check(topping_numberall)
 
-                                            result = result + topping_price[topping_number1 - 1] + topping_price[topping_number2 - 1]
-                                            while True:
-                                                cheack_topping = input("คุณต้องการดำเนินการต่อหรือไม่ \n1.ดำเนินการต่อไป   2.เปลี่ยนท็อปปิง   9.เลือกจำนวนท็อปปิงใหม่   0.ยกเลิกท็อปปิง(ดำเนินการต่อไป) \n>>>: ")
-                                                
-                                                if cheack_topping == "1":
-                                                    menu.set_price(menu.price_use() + result)
-                                                    break
-                                                elif cheack_topping == "2":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    result = 0
+                                                        
+
+                                                                                        
+                                                elif topping_want == 0 or topping_want == "0":
                                                     break
                                                 
-                                                elif cheack_topping == "0":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    result = 0
-                                                    break
+                                            if topping_want != " ":    
+                                                break
 
-                                                elif cheack_topping == "9":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    topping_want = " "
-                                                    result = 0
-                                                    print(topping_list)
-                                                    break
-                                                else:
-                                                    print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
-                                            if cheack_topping != "2" : break
+                                        else:
+                                            print("\n***กรุณาใส่เลือกรายการเฉพาะตัวเลข***")
 
-                                        elif topping_want == 3 :# ต้องการท๊อปปิ้ง 3 อย่าง
-                                            topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
-                                            topping_select = topping_list[topping_number1-1]
-                                            print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
-                                            topping_numberall.append(topping_number1)
-                                            topping_check(topping_numberall)
-                                            # topping_numberall.append(topping_number1)
-                                            
-                                            topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
-                                            print("รายการที่คุณเลือก : ",topping_list[topping_number2-1],"\n")
-                                            topping_select = topping_select +" "+ topping_list[topping_number2-1]
-                                            topping_numberall.append(topping_number2)
-                                            topping_check(topping_numberall)
-                                            # topping_numberall.append(topping_number2)
 
-                                            topping_number3 = int(input("รายการท๊อปปิ้ง ที่ 3 : "))   
-                                            # topping_numberall.append(topping_number3)                 
-                                            topping_select = topping_select +" "+ topping_list[topping_number3-1]
-                                            print("###################################\nรายการที่คุณเลือก : ", end='')
-                                            print(topping_select,"\n")
-                                            topping_numberall.append(topping_number3)
-                                            topping_check(topping_numberall)
-                                            
-                                            result = result + topping_price[topping_number1 - 1] + topping_price[topping_number2 - 1] + topping_price[topping_number3 - 1]
-                                            while True:
-                                                cheack_topping = input("คุณต้องการดำเนินการต่อหรือไม่ \n1.ดำเนินการต่อไป   2.เปลี่ยนท็อปปิง   9.เลือกจำนวนท็อปปิงใหม่   0.ยกเลิกท็อปปิง(ดำเนินการต่อไป) \n>>>: ")
-                                                
-                                                if cheack_topping == "1":
-                                                    menu.set_price(menu.price_use() + result)
-                                                    break
-                                                elif cheack_topping == "2":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    result = 0
-                                                    break
-                                                
-                                                elif cheack_topping == "0":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    result = 0
-                                                    break
+                                elif topping_yn == "N" or topping_yn == "n":
+                                    break
+                    
+                elif check_menu == "N" or check_menu == "n":
+                    menu.set_price(menu.price_use() - menu.menu_price[menu_number-1])
+                    # check_menu == " "
+                    break
+                else:
+                    print("คุณต้องเลือก Y ไปละ")
+                    menu.set_price(menu.price_use() - menu.menu_price[menu_number-1])
+                    break
+            if check_menu == "n" or check_menu == "N":
+                continue
+            else :break
 
-                                                elif cheack_topping == "9":
-                                                    topping_select = ""
-                                                    topping_numberall = []
-                                                    topping_want = " "
-                                                    result = 0
-                                                    print(topping_list)
-                                                    break
-                                                else:
-                                                    print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
-                                            if cheack_topping != "2" : break
-                        
-                                else:
-                                    topping_want = " "
-                                    continue
-
-                                if cheack_topping == "9" or cheack_topping == 9:
-                                    topping_select = " "
-                                    topping_numberall = []
-                                    topping_want = " "
-                                    continue
-                                    
-                                elif topping_want > 3 or topping_want == 0 :
-                                        topping_want = " "
-                                        print("\n***ใส่สูงสุดได้แค่ 3 รายการ***")
-                                        break
-
-                                
-
-                                # if topping_want != " ":
-                                #             break
-                            else:
-                                topping_want = " "
-                                print("กรุณากรอกเฉพาะตัวเลข")
-                                
-                        # except ValueError:
-                        #     print("\n***กรุณาใส่เลือกรายการเฉพาะตัวเลข***")
+            
     
 
+
+print("****ขอบคุณที่ใช้บริการ****")
 
 
 
