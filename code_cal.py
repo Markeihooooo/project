@@ -72,7 +72,7 @@ while True:
                                                                     topping_number1 = input("รายการท๊อปปิ้งที่คุณต้องการ  ") ## แก้ไข
                                                                     if topping_number1.isdigit():
                                                                         topping_number1 = int(topping_number1)
-                                                                        if topping_number1 > 10 :
+                                                                        if topping_number1 > 10 or topping_number1 < 1:
                                                                             menu.topping_showall()
                                                                             continue
                                                                         elif topping_want == " ":
@@ -121,27 +121,56 @@ while True:
                                                                     else:
                                                                         print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
                                                                 if cheack_topping != "2" : break
+
+
                                                             elif topping_want == 2 : # ต้องการท๊อปปิ้ง 2 อย่าง
                                                                 while True:
                                                                     topping_number1 = (input("รายการท๊อปปิ้ง ที่ 1 : "))
                                                                     if topping_number1.isdigit():
                                                                         topping_number1 = int(topping_number1)
-                                                                        if topping_number1 > 10 :
-                                                                            topping_select = topping_list[topping_number1-1]
-                                                                            print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
-                                                                            topping_numberall.append(topping_number1)
-                                                                            topping_check(topping_numberall)
-                                                                            # topping_numberall.append(topping_number1)
+                                                                        if topping_number1 > 10 or topping_number1 < 1:
+                                                                            menu.topping_showall()
+                                                                            continue
+                                                                        
                                                                         elif topping_want == " ":
                                                                             print("คุณยังไม่ได้กรอกข้อมูล")
                                                                             menu.topping_showall()
                                                                             continue
+
                                                                         else:
                                                                             menu.topping_showall()
                                                                             pass
 
-                                                                topping_number2 = int(input("รายการท๊อปปิ้ง ที่ 2 : "))
-                                                                # topping_numberall.append(topping_number2)
+                                                                        topping_select = topping_list[topping_number1-1]
+                                                                        print("###################################\nรายการที่คุณเลือก : ",topping_select,"\n")
+                                                                        topping_numberall.append(topping_number1)
+                                                                        topping_check(topping_numberall)
+                                                                        break
+                                                                    else:
+                                                                        print("โปรดป้อนตัวเลขเท่านั้น ")
+                                                                        menu.topping_showall()
+                                                                while True:
+                                                                    
+                                                                    topping_number2 = (input("รายการท๊อปปิ้ง ที่ 2 : "))
+                                                                    if topping_number2.isdigit():
+                                                                        topping_number2 = int(topping_number2)
+                                                                        if topping_number2 > 10 or topping_number2 < 1 :
+                                                                            topping_check(topping_numberall)
+                                                                            print("คุณกรอกรายการที่ไม่ถูกต้อง")
+                                                                            continue
+                                                                        elif topping_want == " ":
+                                                                                print("คุณยังไม่ได้กรอกข้อมูล")
+                                                                                topping_check(topping_numberall)
+                                                                                continue
+                                                                        elif topping_number2 == topping_number1:
+                                                                            print("กรุณาเลือกรายการที่ไม่เหมือนกัน กรุณาเลือกรายการที่ 2 ใหม่ ")
+                                                                            topping_check(topping_numberall)
+                                                                            continue
+                                                                        else:
+                                                                                menu.topping_showall()
+                                                                        pass
+                                                                    break
+
                                                                 topping_select = topping_select +" "+ topping_list[topping_number2-1]
                                                                 print("###################################\nรายการที่คุณเลือก : ", end='')
                                                                 print(topping_select,"\n")
@@ -177,6 +206,9 @@ while True:
                                                                     else:
                                                                         print("\nโปรดป้อนตัวเลข 1, 2, 9, หรือ 0 เท่านั้น\n")
                                                                 if cheack_topping != "2" : break
+                                                            
+                                                                
+                                                            
                                                             elif topping_want == 3 :# ต้องการท๊อปปิ้ง 3 อย่าง
                                                                 topping_number1 = int(input("รายการท๊อปปิ้ง ที่ 1 : "))
                                                                 topping_select = topping_list[topping_number1-1]
