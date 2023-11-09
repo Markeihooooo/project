@@ -8,7 +8,7 @@ result = 0
 def topping_check(selected_items):
      for i in range(1, 11):
          if i in selected_items:
-             print("\033[1;30m", end='')  # สีเทา
+             print("\033[1;32m", end='')  # สีเทา
          else:
              print("\033[0m", end='')  # สีปกติ
         
@@ -344,7 +344,7 @@ while True:
                                                             
                                                 elif topping_want > 3 :
                                                     topping_want = " "
-                                                    print("\n***ใส่สูงสุดได้แค่ 3 รายการ***")
+                                                    print("\n\033[1;31m***ใส่สูงสุดได้แค่ 3 รายการ***\033[0m")
                                                     break
 
 
