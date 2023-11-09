@@ -1,6 +1,7 @@
 menu_list = ["ชานมใต้หวัน(Taiwan Mile Tea)","ชานมกาแฟ(Coffee Milk Tea)","ชานมโกโก้(Cocoa Milk Tea)","ชานมเผือก(Taro Milk Tea)","ชานมลิ้นจี่(Lychee Milk Tea)","ชานมคาราเมล(caramel Milk Tea)","ชานมน้ำผึ้ง(Honey Milk Tea)","ชาดำเย็น(Thai Tea)","ชาไทย(Thai Milk Tea)","ชาเขียว(green Tea)","ชานมเเอปเปิ้ล(Appln Milk Tea)"]
 topping_list = ["วุ้นอโล", "สโนว์มุก","ไข่มุกโนบิ","เยลลี่ผลไม้", "บุกราวน์ชูการ์ ", "คาราเมล", "สตอเบอรี่", "ไข่มุกราวน์ชูการ์", "บุกคริสตัส", "ราสเบอรี่"]
 menu_price = [19,19,19,19,19,19,19,19,19,19,19,19]
+topping_price = [15, 10, 10, 10, 10, 10, 10, 15, 15, 10]
 price = 0
 name_menu = " "
 
