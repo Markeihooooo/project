@@ -53,12 +53,12 @@ while True:
 
                     while True:###################################################
                                 menu.topping_showall()
-                                topping_yn = input("\033[1;34m\nDo you want to add toppings ?\n\033[0m \n\033[1;32mY.ต้องการเพิ่ม\033[0m\n\033[1;31mN.ไม่ต้องการ(เลือกขนาดแก้ว) \033[0m\n\n\033[1;34mY/N >>>:\033[0m ")
+                                topping_yn = input("\033[1;34m\nDo you want to add toppings ?\n\033[0m \n\033[1;32mY.ต้องการเพิ่ม\033[0m\n\033[1;31mN.ไม่ต้องการ(ดำเนินการต่อ) \033[0m\n\n\033[1;34mY/N >>>:\033[0m ")
                                 #ไม่ต้องการ ต้องไปที่เลือกแก้ว
                                 if topping_yn == ("Y") or topping_yn == ("y"): 
 
                                     while True: #ต้องNไปเลือกแก้ว
-                                        topping_want = input("\n\033[1;34mHow many toppings do you want to add? Maximum is 3\033[0m\n\n\033[1;31m0 = ยกเลิกท๊อปปิ้ง(เลือกขนาดแก้ว) \033[0m\n\n\033[1;34mต้องการใส่กี่อย่าง >>>:\033[0m " )
+                                        topping_want = input("\n\033[1;34mHow many toppings do you want to add? Maximum is 3\033[0m\n\n\033[1;31m0 = ยกเลิกท๊อปปิ้ง(ดำเนินการต่อ) \033[0m\n\n\033[1;34mต้องการใส่กี่อย่าง >>>:\033[0m " )
 
                                         if topping_want.isdigit():
                                             while True:
@@ -361,18 +361,78 @@ while True:
                                     break#หาทางออกจากท๊อปิ้ง
                                 
 
-
+ 
                                 elif topping_yn == "N" or topping_yn == "n": #ออกจากเลืกท๊อปปิ้งและไปเลือกแก้ว
                                     break
 
 
-                                
+                    menu.sugar_choice()
+                    while True:
+                        sugar_check = input("\033[1;34mกรุณาเลือกความหวานที่คุณต้องการ \033[0m : ") 
+                        if sugar_check == "1" :
+                            print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                            sugar_sure = input("คุณต้องการเลือกความหวานนี้หรือไม่ (Y/N) : ")
+                            if sugar_sure == "Y" or sugar_sure == "y":
+                                print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                                menu.sugar_selected.append(menu.sugar_list[int(sugar_check)-1])
+                                break
+                            else:
+                                continue
+                            
+                        elif sugar_check == "2" :
+                            print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                            sugar_sure = input("คุณต้องการใช้ความหวานนี้หรือไม่ (Y/N) : ")
+                            if sugar_sure == "Y" or sugar_sure == "y":
+                                print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                                menu.sugar_selected.append(menu.sugar_list[int(sugar_check)-1])
+                                break
+                            else:
+                                continue
+                            
+                        elif sugar_check == "3" :
+                            print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                            sugar_sure = input("คุณต้องการใช้ความหวานนี้หรือไม่ (Y/N) : ")
+                            if sugar_sure == "Y" or sugar_sure == "y":
+                                print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                                menu.sugar_selected.append(menu.sugar_list[int(sugar_check)-1])
+                                break
+                            else:
+                                continue
+
+                        elif sugar_check == "4" :
+                            print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                            sugar_sure = input("คุณต้องการใช้ความหวานนี้หรือไม่ (Y/N) : ")
+                            if sugar_sure == "Y" or sugar_sure == "y":
+                                print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
+                                menu.sugar_selected.append(menu.sugar_list[int(sugar_check)-1])
+                                break
+                            else:
+                                continue
+                        else:
+                            print("\n\033[1;31m***กรุณาใส่เลือกรายการเฉพาะตัวเลข***\033[0m")
+                            continue
+
+
                     menu.size_cup()
-                    cup_check = input("คุณต้องการใช้แก้วขนาดเท่าไหร่ (ใส่ตัวเลข) : ")
-
-
-
+                    while True:
+                        cup_check = input("คุณต้องการใช้แก้วขนาดเท่าไหร่ (ใส่ตัวเลข) : ")
+                        if cup_check == "1" or cup_check == "2" or cup_check == "3" or cup_check == "4":
+                            menu.set_price(menu.price_use() + menu.cup_price[int(cup_check) - 1])
+                            print("\n\n\033[1;34mYour chosen menu is\033[0m\n\n",menu.menu_list[menu_number-1],"ราคา ",menu.price_use()," ฿\n")
+                            check_cup = input("\033[1;34mดำเนิดการหรือไม่ (Y/N)\033[0m : ")
+                            if check_cup == "Y" or check_cup == "y":
+                                break
+                            elif check_cup == "n" or check_cup =="N":
+                                continue
+                            else:continue
+                        elif cup_check == "0":break 
                         
+                        else:print("\n\033[1;31m***กรุณาใส่ตัวเลข 1, 2, 3, 4 หรือขนาดSize ที่ต้องการ***\033[0m")
+
+                    break
+
+
+
                     
                 elif check_menu == "N" or check_menu == "n":
                     
