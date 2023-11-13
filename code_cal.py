@@ -1,9 +1,12 @@
 ##################################
 import menu
+import time
 current_price = menu.price_use()
 topping_item = " "
 topping_numberall = [] #ทำให้ท๊อปปิ้งสีดำ
 result = 0
+countdown = 10 
+
 
 def topping_check(selected_items):
      for i in range(1, 11):
@@ -34,6 +37,19 @@ def topping_check(selected_items):
              print("    10.ราสเบอรี่     ---- +10 ฿\n")
      print("\033[0;37;40m", end='')
 # topping_check(topping_numberall)0
+
+def finish_allmenu():
+    print(f"Menu you choice : {menu.menu_list[menu_number-1]}",f"Price : {menu.menu_price[menu_number-1]}")
+    if topping_numberall:
+        for number in topping_numberall:
+            print("Topping you choice : ",menu.topping_list[number-1],end=" ")
+    else:print("ไม่ได้เลือกtopping")
+    if topping_numberall:print("รวมราคา topping : ",result)
+
+    
+
+
+
 
 while True:
     menu.menu()
@@ -420,17 +436,29 @@ while True:
                         if cup_check == "1" or cup_check == "2" or cup_check == "3" or cup_check == "4":
                             menu.set_price(menu.price_use() + menu.cup_price[int(cup_check) - 1])
                             print("\n\n\033[1;34mYour chosen menu is\033[0m\n\n",menu.menu_list[menu_number-1],"ราคา ",menu.price_use()," ฿\n")
-                            check_cup = input("\033[1;34mดำเนิดการหรือไม่ (Y/N)\033[0m : ")
+                            check_cup = input(f"\033[1;34mยืนยันที่จะเลือกแก้วขนาด  {menu.cup_size[int(cup_check)-1]} (Y/N)\033[0m : ")
                             if check_cup == "Y" or check_cup == "y":
+                                
+                                finish_allmenu()
+
+                                # while countdown > 0:
+                                #     print (countdown," วินาที")
+                                #     if countdown == 3:
+                                #         print ("กรุณาเตรียมรับสินค้า")
+                                #     time.sleep(1)
+                                #     countdown -= 1
+                                
                                 break
                             elif check_cup == "n" or check_cup =="N":
+                                menu.set_price(menu.price_use() - menu.cup_price[int(cup_check) - 1])
                                 continue
                             else:continue
                         elif cup_check == "0":break 
                         
                         else:print("\n\033[1;31m***กรุณาใส่ตัวเลข 1, 2, 3, 4 หรือขนาดSize ที่ต้องการ***\033[0m")
-
                     break
+
+
 
 
 
@@ -444,14 +472,8 @@ while True:
                 else:
                     print("\033[1;31mคุณต้องเลือก Y ไปละ\033[0m")
                     
-
                     continue
-                break
-
-
-
-
-
+                
 
 
             if check_menu == "n" or check_menu == "N":

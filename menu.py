@@ -1,5 +1,5 @@
 menu_list = ["ชานมใต้หวัน(Taiwan Mile Tea)","ชานมกาแฟ(Coffee Milk Tea)","ชานมโกโก้(Cocoa Milk Tea)","ชานมเผือก(Taro Milk Tea)","ชานมลิ้นจี่(Lychee Milk Tea)","ชานมคาราเมล(caramel Milk Tea)","ชานมน้ำผึ้ง(Honey Milk Tea)","ชาดำเย็น(Thai Tea)","ชาไทย(Thai Milk Tea)","ชาเขียว(green Tea)","ชานมเเอปเปิ้ล(Appln Milk Tea)"]
-topping_list = ["วุ้นอโล", "สโนว์มุก","ไข่มุกโนบิ","เยลลี่ผลไม้", "บุกราวน์ชูการ์ ", "คาราเมล", "สตอเบอรี่", "ไข่มุกราวน์ชูการ์", "บุกคริสตัส", "ราสเบอรี่"]
+topping_list = ["วุ้นอโล", "สโนว์มุก","ไข่มุกโนบิ","เยลลี่ผลไม้", "บุกราวน์ชูการ์", "คาราเมล", "สตอเบอรี่", "ไข่มุกราวน์ชูการ์", "บุกคริสตัส", "ราสเบอรี่"]
 menu_price = [19,19,19,19,19,19,19,19,19,19,19,19]
 topping_price = [15, 10, 10, 10, 10, 10, 10, 15, 15, 10]
 cup_price = [0, 5, 10, 15]
@@ -7,7 +7,7 @@ sugar_list = ["ไม่หวาน", "หวานน้อย", "หวาน
 price = 0
 name_menu = " "
 sugar_selected = []
-
+cup_size = ["8 Oz", "12 Oz", "16 Oz","24 Oz"]
 
 def set_price(new_price):
     global price
@@ -48,13 +48,14 @@ def topping_showall():
 
 
 def size_cup():
-    print("\n======== Glass =========")
-    print("| 1.s      ----- Free ฿ |")
-    print("| 2.M      ----- 5 ฿    |")
-    print("| 3.L      ----- 10 ฿   |")
-    print("| 4.XL     ----- 15 ฿   |")
-    print("| 0.ยกเลิกรายการ         |")
-    print("=========================\n")
+    print("\n======== Glass ==========")
+    print("| 1.8 Oz    ----- Free ฿ |")
+    print("| 2.12 Oz    ----- 5 ฿   |")
+    print("| 3.16 Oz    ----- 10 ฿  |")
+    print("| 4.24 Oz    ----- 15 ฿  |")
+    print("| 0.ยกเลิกรายการ          |")
+    print("==========================\n")
+
 
 
 def sugar_choice():
@@ -64,7 +65,6 @@ def sugar_choice():
     print("|      3.หวานปกติ       |")
     print("|      4.หวานมาก       |")
     print("========================")
-
 
 
 
