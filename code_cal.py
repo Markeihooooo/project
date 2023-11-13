@@ -366,8 +366,9 @@ while True:
                                     break
 
 
-                    menu.sugar_choice()
+
                     while True:
+                        menu.sugar_choice()
                         sugar_check = input("\033[1;34mกรุณาเลือกความหวานที่คุณต้องการ \033[0m : ") 
                         if sugar_check == "1" :
                             print("คุณเลือกความหวาน : ",menu.sugar_list[int(sugar_check)-1])
