@@ -41,11 +41,16 @@ def topping_check(selected_items):
 def finish_allmenu():
     print(f"Menu you choice : {menu.menu_list[menu_number-1]}",f"Price : {menu.menu_price[menu_number-1]}")
     if topping_numberall:
+        print("Topping you choice :", end=" ")
         for number in topping_numberall:
-            print("Topping you choice : ",menu.topping_list[number-1],end=" ")
-    else:print("ไม่ได้เลือกtopping")
-    if topping_numberall:print("รวมราคา topping : ",result)
-
+            # print("Topping you choice : ",menu.topping_list[number-1],end=" ")
+            print(menu.topping_list[number-1], end=" ")
+    else:print("No Topping")
+    if topping_numberall:print("\nรวมราคา topping : ",result," ฿")
+    print("ความหวาน : ",menu.sugar_selected)
+    print("ขนาดแก้ว : ",menu.cup_size[int(cup_check)-1],end=" ")
+    if cup_check == "1":print("free cup")
+    else:print("ราคา ",menu.cup_price[int(cup_check)-1]," ฿")
     
 
 
