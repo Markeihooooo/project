@@ -440,7 +440,6 @@ while True:
                         cup_check = input("คุณต้องการใช้แก้วขนาดเท่าไหร่ (ใส่ตัวเลข) : ")
                         if cup_check == "1" or cup_check == "2" or cup_check == "3" or cup_check == "4":
                             menu.set_price(menu.price_use() + menu.cup_price[int(cup_check) - 1])
-                            print("\n\n\033[1;34mYour chosen menu is\033[0m\n\n",menu.menu_list[menu_number-1],"ราคา ",menu.price_use()," ฿\n")
                             check_cup = input(f"\033[1;34mยืนยันที่จะเลือกแก้วขนาด  {menu.cup_size[int(cup_check)-1]} (Y/N)\033[0m : ")
                             if check_cup == "Y" or check_cup == "y":
                                 
@@ -450,11 +449,12 @@ while True:
                                 if check_last == "Y" or check_last == "y":
                                     while countdown > 0:
                                         print (countdown," วินาที")
+                                        (time.sleep(1))
                                         countdown -= 1
                                     break
-                                elif check_last == "N" or check_last == "n":
-                                    print("กลับไปเลือกเมนูอื่น")
-                                    continue
+                                else:continue
+
+
                                 
 
                                 
@@ -523,7 +523,8 @@ while True:
             
     
 
-
+print("\n เมนูที่สั่งเสร็จเรียบร้อยแล้ว\n")
+(time.sleep(1))
 print("\n\033[1;34m****ขอบคุณที่ใช้บริการ****\033[0m")
 
 
