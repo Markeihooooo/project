@@ -51,9 +51,9 @@ def finish_allmenu():
     print("ขนาดแก้ว : ",menu.cup_size[int(cup_check)-1],end=" ")
     if cup_check == "1":print("free cup")
     else:print("ราคา ",menu.cup_price[int(cup_check)-1]," ฿")
+    print("ความหวาน : ",menu.sugar_selected)
+    print(".\n.\n.\n.\n.\nราคารวมทั้งหมด : ",menu.menu_price[menu_number-1]+result+menu.cup_price[int(cup_check)-1]," ฿")
     
-
-
 
 
 while True:
@@ -446,12 +446,17 @@ while True:
                                 
                                 finish_allmenu()
 
-                                # while countdown > 0:
-                                #     print (countdown," วินาที")
-                                #     if countdown == 3:
-                                #         print ("กรุณาเตรียมรับสินค้า")
-                                #     time.sleep(1)
-                                #     countdown -= 1
+                                check_last = input("ยันยันการสั่งเมูนูนี้หรือไม่ (Y/N) : ")
+                                if check_last == "Y" or check_last == "y":
+                                    while countdown > 0:
+                                        print (countdown," วินาที")
+                                        countdown -= 1
+                                    break
+                                elif check_last == "N" or check_last == "n":
+                                    print("กลับไปเลือกเมนูอื่น")
+                                    continue
+                                
+
                                 
                                 break
                             elif check_cup == "n" or check_cup =="N":
