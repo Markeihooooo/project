@@ -5,7 +5,7 @@ current_price = menu.price_use()
 topping_item = " "
 topping_numberall = [] #ทำให้ท๊อปปิ้งสีดำ
 result = 0
-countdown = 10 
+countdown = 5 
 
 
 def topping_check(selected_items):
@@ -37,6 +37,8 @@ def topping_check(selected_items):
              print("    10.ราสเบอรี่     ---- +10 ฿\n")
      print("\033[0;37;40m", end='')
 # topping_check(topping_numberall)0
+
+
 
 def finish_allmenu():
     print(f"Menu you choice : {menu.menu_list[menu_number-1]}",f"Price : {menu.menu_price[menu_number-1]}")
