@@ -5,8 +5,12 @@ list_menu_user=[]
 list_topping_user=[]
 list_sugar_user=[]
 list_cup_user=[]
-
+list_price_user=[]
 topping_numberall = []
+price1 = 0
+
+topping_number2 = None
+topping_number3 = None
 def topping_check(selected_items):
     print("\033[1;35m==================== topping ==========================\033[0m")
     for i in range(1, 11):
@@ -57,7 +61,7 @@ def menu_tea():
                 while True:
                     check_menu = input("\033[1;34mคุณต้องการดำเนินการต่อหรือไม่\033[0m\n\n\033[1;32mY = ดำเนินการต่อ\033[0m\n\033[1;33mN = แก้ไขรายการเมนู\033[0m\n\033[1;31m0 = ยกเลิก\033[0m\n\n\033[1;34m[Y/N] :\033[0m ")#
                     if check_menu == "Y" or check_menu == "y" or check_menu == "1":
-                        menu.set_price(menu.price_use() + menu.menu_price[menu_number-1])
+                        menu.price = menu.price + menu.menu_price[menu_number-1]
                         list_menu_user.append(menu.menu_list[menu_number-1])
                         break
                     elif check_menu == "N" or check_menu == "n" or check_menu == "2":
@@ -112,9 +116,20 @@ def menutopping_new():
                         continue
 
                 elif topping_want == 2:
-                    topping_2()
+                    while True:
+                        topping_1()
+                        check_want_topping()
+                        topping_2()
+                        check_want_topping()
+                        if check_topping_select != "2":break
+                        menu.topping_showall()
+
                 elif topping_want == 3:
-                    topping_3()
+                    while True:
+                        topping_3()
+                        check_want_topping()
+                        if check_want_topping != "2":break
+                        menu.topping_showall()
             elif topping_want == 0:
                 break
             else:
@@ -143,9 +158,12 @@ def topping_1():
                 menu.topping_showall()
                 topping_select = menu.topping_list[topping_number1-1]
                 print("\n\033[1;32mYou choose : " + topping_select)
-                list_topping_user.append(menu.topping_list[topping_number1-1])
-                list_topping_user.append(" ")
-                list_topping_user.append(" ")
+                if topping_want == 1 or topping_want == "1":
+                    list_topping_user.append(menu.topping_list[topping_number1-1])
+                    list_topping_user.append(" ")
+                    list_topping_user.append(" ")
+                else:
+                    list_topping_user.append(menu.topping_list[topping_number1-1])
                 topping_numberall.append(topping_number1)
                 topping_check(topping_numberall)
                 break
@@ -161,15 +179,56 @@ def topping_1():
             print("\n\033[1;31m======= โปรดป้อนตัวเลขเท่านั้นในรายการเท่านั้น =======\033[0m\n")
             menu.topping_showall()
 
+
 def topping_2():
-    print("คุณเลือก2")
+    global  topping_want 
+    global topping_number1
+    global topping_number2
+    global topping_select
+    global list_topping_user
+    global topping_numberall
+
+    while True:
+        topping_check(topping_numberall)
+        topping_number2 = input("\n\033[1;34mPlease choose the topping you want 2. : \033[0m")
+        if topping_number2.isdigit():topping_number2= int(topping_number2)
+            
+
+        if topping_number2> 10 or topping_number2<1:
+            menu.topping_showall
+            continue
+        elif topping_number2 == topping_number1:
+            print("\n\033[1;31mกรุณาเลือกรายการซ้ำกับรายการที่ 1 กรุณาเลือกรายการที่ 2 ใหม่\033[0m \n")
+            continue
+        elif topping_number1 == " ":
+            print("\033[1;31mคุณยังไม่ได้กรอกข้อมูล\033[0m")
+        else:
+            pass
+
+            topping_select = menu.topping_list[topping_number2-1]
+            print("\n\033[1;32mYou choose : " + topping_select)
+            if topping_want == 2 or topping_want == "2":
+                list_topping_user.append(menu.topping_list[topping_number2-1])
+                list_topping_user.append(" ")
+            elif topping_want == 3 or topping_want == "3":
+                list_topping_user.append(menu.topping_list[topping_number2-1])
+                
+            topping_numberall.append(topping_number2)
+            topping_check(topping_numberall)
+            break
+        break
+
+
+
+
+
 
 def topping_3():
     print("topping 3")
 
 def check_want_topping():
-    from menu import price_use
-    from menu import set_price
+    # from menu import price_use
+    # from menu import set_price
     global topping_select
     global list_topping_user
     global check_topping_select
@@ -184,12 +243,27 @@ def check_want_topping():
                                     "\033[1;31m\n0.ยกเลิกท็อปปิง(เเละดำเนินการต่อไป)\033[0m \n\n>>>: " )
         if check_topping_select == "1":
             if topping_want == "1" or topping_want == 1:
-                menu.set_price(menu.price_use() + menu.topping_price[topping_number1-1])
-            elif topping_want == "2":
-                menu.set_price(menu.price_use() + menu.topping_price[topping_number1-1])################
-            elif topping_want == "3":
-                menu.set_price(menu.price_use()+menu.topping_price[topping_number1-1])####################
-            break
+                menu.price = menu.price + menu.topping_price[int(topping_number1)-1]
+                break
+
+            elif topping_want == "2" or (topping_want == 2):
+            # topping_want == "2" or topping_want == 2 and topping_number2 != "":
+                if topping_number2 != None:
+                    menu.price = menu.price + menu.topping_price[int(topping_number1)-1]
+                    menu.price = menu.price + menu.topping_price[int(topping_number2) - 1]
+                    break
+                else:break
+                    # menu.price = menu.price + menu.topping_price[int(topping_number2)-1]
+
+            elif topping_want == "3" or (topping_want == 3):
+                if topping_number3 != None:
+                    menu.price(menu.price_use()+menu.topping_price[topping_number1-1])
+                    menu.price(menu.price_use()+menu.topping_price[topping_number2-1])
+                    menu.price(menu.price_use()+menu.topping_price[topping_number3-1])
+                    break
+                else:break
+            else:
+                break
         elif check_topping_select == "2":
             topping_select = ""
             list_topping_user = []
@@ -200,6 +274,7 @@ def check_want_topping():
             topping_select = ""
             list_topping_user = []
             topping_want =""
+            topping_numberall = []
             break
         elif check_topping_select == "0":
             topping_select = ""
@@ -262,7 +337,7 @@ def cup_select_new():
     while True:
         cup_check_new = input("คุณต้องการใช้แก้วขนาดเท่าไหร่ (ใส่ตัวเลข) : ")
         if cup_check_new == "1" or cup_check_new == "2" or cup_check_new == "3" or cup_check_new == "4":
-            menu.set_price(menu.price_use()+menu.cup_price[int(cup_check_new)-1])
+            menu.price = menu.price + menu.cup_price[int(cup_check_new)-1]
             cup_check_agian = input(f"\033[1;34mยืนยันที่จะเลือกแก้วขนาด {menu.cup_price[int(cup_check_new)-1]} ฿\033[0m (Y/N) : ")
             if cup_check_agian  == "Y" or cup_check_agian == "y":
                 list_cup_user.append(menu.cup_size[int(cup_check_new)-1])
@@ -285,6 +360,8 @@ def finish_new():
 
     print("คุณเลือกความหวาน : ",list_sugar_user[0:1])
     print("คุณเลือกขนาดแก้ว : ",list_cup_user[0:1])
+    print("รวม ราคา : ",price1)
+    
 
 def finish_new2():
     # global list_menu_user
@@ -301,5 +378,7 @@ def finish_new2():
 
     print("คุณเลือกความหวาน : ",list_sugar_user[1:2])
     print("คุณเลือกขนาดแก้ว : ",list_cup_user[1:2])
+    print("รวม ราคา : ",(menu.price-price1))
+    print("ราคา รวมทั้งสองเมนู : ",(menu.price))
 
 

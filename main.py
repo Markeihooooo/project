@@ -17,7 +17,7 @@ while True:
 
             if topping_yn == ("Y") or topping_yn == ("y"): 
                 code_def.menutopping_new()
-                print("price : ",menu.price_use())
+                print("price : ",menu.price)
                 break
             elif topping_yn == ("N") or topping_yn == ("n"):
                 print("ไม่เลือกท๊อปปิ้ง")
@@ -31,7 +31,7 @@ while True:
                 break
             elif topping_yn == ("0"):
                 break
-            else:
+            else: 
                 print("กรุณาใส่ตัวเลข")
                 continue
             
@@ -47,6 +47,7 @@ while True:
             code_def.cup_select_new()
             break
     if menu_user == 1:
+        code_def.price1 = code_def.price1 + menu.price
         code_def.finish_new()
     elif menu_user == 2:
         code_def.finish_new()
@@ -55,6 +56,8 @@ while True:
         want_more = input("คุณต้องการสั่งอีกแก้วหรือไม่ : ")
         if want_more == "Y" or want_more == "y":
             menu_user = menu_user + 1
+            code_def.topping_numberall = []
+            
             continue
         elif want_more == "N" or want_more == "n":
             break

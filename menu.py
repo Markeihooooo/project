@@ -9,13 +9,15 @@ name_menu = " "
 sugar_selected = []
 cup_size = ["8 Oz", "12 Oz", "16 Oz","24 Oz"]
 
-def set_price(new_price):
-    global price
-    price = new_price
-
+# def set_price(new_price):
+#     global price
+#     price = new_price
 
 def price_use():
     return price
+
+# def price_use():
+#     return price
 
 ## Menu
 def menu():
